@@ -1,0 +1,64 @@
+.ContactTitle {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contactInfo {
+    display: flex;
+    height: 80vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.outflex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.InputSizing {
+    height: 5vh;
+    margin-bottom: 18px;
+}
+
+.messageContent {
+    height: 15vh;
+    margin-bottom: 2.5%;
+}
+
+.TextContact {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-right: 15%;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.submitButton {
+    padding: 11px 25px;
+    font-size: 1rem;
+    border-radius: 100px;
+    background: #353535;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.submitForm {
+    margin: 0% 15%;
+}

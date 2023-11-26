@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title">My Blog | An Article I Wrote</title>
+    <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
+
+    <style>
+        h2#helloParagraph {
+            position: absolute;
+            color: white;
+        }
+
+        .blogImage {
+            height: 60vh;
+            width: 100%;
+        }
+
+        .headerImageTitle {
+            margin-top: 3%;
+        }
+
+        .ContainerInfo {
+            display: flex;
+            gap: 3%;
+        }
+
+        .InDepthBox {
+            margin-left: 3%;
+            width: 50%;
+        }
+
+        .textFlex {
+            display: flex;
+            gap: 4%;
+        }
+
+        .samsungS0 {
+            width: 40%;
+            border-radius: 10px;
+            height: 20vh;
+        }
+
+        .HoloWatch {
+            width: 60%;
+            border-radius: 10px;
+            height: 20vh;
+        }
+
+        .Review-Watch {
+            width: 40%;
+        }
+
+        .ConBottomInfo {
+            display: flex;
+            justify-content: center;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Your existing header content -->
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="blogContent">
+        <!-- Dynamic blog post content will appear here -->
+    </div>
+    <img class="blogImage" src="ImageAndSvg/1stBlogHeaderImage.png" alt="Header Image for Post 1"
+        id="headerImageForPost1">
+    <div class="ContainerInfo">
+        <div class="InDepthBox">
+            <h3 id="samsungS0Review">Review: Samsung S0</h3>
+            <div class="textFlex">
+                <p id="reviewTextSamsung">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
+                    augue
+                    eros.
+                    Nam vulputate
+                    non
+                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
+                    semper
+                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
+                    dui
+                    ut, auctor velit.
+                </p>
+                <img id="samsungS0Image" class="samsungS0" src="ImageAndSvg/SamsungS0.png">
+            </div>
+        </div>
+        <div class="Review-Watch">
+            <h3 id="holoTitle">Review: HoloWatch</h3>
+            <div class="textFlex">
+                <p id="reviewTextHoloWatch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
+                    augue eros. Nam vulputate
+                    non
+                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
+                    semper
+                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
+                    dui
+                    ut, auctor velit.
+                </p>
+                <img id="holoWatchImage" class="HoloWatch" src="ImageAndSvg/HoloWatch.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="ConBottomInfo">
+        <div class="InDepthBox">
+            <h3 id="soundNovaTitle">Review: SoundNova Earbuds </h3>
+            <div class="textFlex">
+                <p id="reviewTextSoundNova">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
+                    augue eros. Nam vulputate
+                    non
+                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
+                    semper
+                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
+                    dui
+                    ut, auctor velit.
+                </p>
+                <img id="soundNovaImage" class="samsungS0" src="ImageAndSvg/SoundNova.png">
+            </div>
+            <p id="summaryText">Dive deeper into the world of technology with our extensive collection of detailed
+                reviews. From the
+                latest
+                smartphones to cutting-edge wearable tech, our expert opinions help you make informed decisions.
+                Whether
+                you're a gadget enthusiast or just looking for your next upgrade, our reviews are designed to give
+                you
+                an
+                in-depth understanding of each product's features, performance, and value</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function getPostIdFromQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get('post');
+        }
+
+        function fetchAndDisplayPost(postId) {
+            fetch(`http://blogpage.local/wp-json/wp/v2/posts/${postId}`)
+                .then(response => response.json())
+                .then(post => {
+                    const contentDiv = document.getElementById('blogContent');
+                    const helloParagraph = document.getElementById('helloParagraph');
+                    const headerImageForPost1 = document.getElementById('headerImageForPost1');
+
+                    // Define an array of element IDs to control visibility
+                    const elementIdsToControl = [
+                        'samsungS0Review',
+                        'reviewText',
+                        'reviewTextSamsung',
+                        'reviewTextHoloWatch',
+                        'reviewTextSoundNova',
+                        'soundNovaTitle',
+                        'holoTitle',
+                        'samsungS0Image',
+                        'holoWatchImage',
+                        'soundNovaImage',
+                        'summaryText'
+                    ];
+
+
+                    if (headerImageForPost1 && postId !== '1') {
+                        headerImageForPost1.style.display = 'none';
+                    }
+
+                    const postTitle = document.createElement('h1');
+                    postTitle.innerHTML = post.title.rendered;
+
+                    const postContent = document.createElement('div');
+                    postContent.innerHTML = post.content.rendered;
+
+                    contentDiv.appendChild(postTitle);
+                    contentDiv.appendChild(postContent);
+
+                    // Loop through the element IDs and control their visibility
+                    elementIdsToControl.forEach(elementId => {
+                        const element = document.getElementById(elementId);
+                        if (element) {
+                            element.style.display = postId === '1' ? 'block' : 'none';
+                        }
+                    });
+
+                    document.title = `My Blog | ${post.title.rendered}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching post:', error);
+                    contentDiv.innerHTML = '<p>Error loading post.</p>';
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const postId = getPostIdFromQuery();
+            if (postId) {
+                fetchAndDisplayPost(postId);
+            } else {
+                console.error('No post ID found in URL');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title">My Blog | An Article I Wrote</title>
+    <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
+
+    <style>
+        .brandingLogo {
+            width: 100%;
+            height: 70vh;
+        }
+
+        .displayInfoText {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Your existing header content -->
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="brandingLogo" src="ImageAndSvg/BigTech.png">
+    <div id="blogContent">
+        <!-- Dynamic blog post content will appear here -->
+    </div>
+    <p>Tech Giants of the Centruy</p>
+    <div class="displayInfoText">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non urna augue. Curabitur rutrum cursus
+            metus eu semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut maximus felis tristique elit
+            condimentum ornare vel sed eros. Vivamus lacus neque, hendrerit ac turpis ut, tincidunt tempor ante.
+            Maecenas sollicitudin ligula at iaculis posuere. Proin faucibus aliquet nunc, non auctor ligula bibendum ac.
+            Curabitur suscipit lacus purus, vitae porttitor nunc dignissim ac. Sed et eleifend turpis. Nunc sapien odio,
+            lobortis vel commodo nec, consequat varius nisl. Sed nec metus vitae ipsum ullamcorper bibendum.
+            Aenean eget ligula id tellus malesuada sollicitudin.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non urna augue. Curabitur rutrum cursus
+            metus eu semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut maximus felis tristique elit
+            condimentum ornare vel sed eros. Vivamus lacus neque, hendrerit ac turpis ut, tincidunt tempor ante.
+            Maecenas sollicitudin ligula at iaculis posuere. Proin faucibus aliquet nunc, non auctor ligula bibendum ac.
+            Curabitur suscipit lacus purus, vitae porttitor nunc dignissim ac. Sed et eleifend turpis. Nunc sapien odio,
+            lobortis vel commodo nec, consequat varius nisl. Sed nec metus vitae ipsum ullamcorper bibendum.
+            Aenean eget ligula id tellus malesuada sollicitudin.
+        </p>
+    </div>
+
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function getPostIdFromQuery() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            return urlParams.get('post');
+        }
+
+        function fetchAndDisplayPost(postId) {
+            fetch(`http://blogpage.local/wp-json/wp/v2/posts/${postId}`)
+                .then(response => response.json())
+                .then(post => {
+                    const contentDiv = document.getElementById('blogContent');
+                    const helloParagraph = document.getElementById('helloParagraph');
+                    const headerImageForPost1 = document.getElementById('headerImageForPost1');
+
+                    // Define an array of element IDs to control visibility
+                    const elementIdsToControl = [
+                        'samsungS0Review',
+                        'reviewText',
+                        'reviewTextSamsung',
+                        'reviewTextHoloWatch',
+                        'reviewTextSoundNova',
+                        'soundNovaTitle',
+                        'holoTitle',
+                        'samsungS0Image',
+                        'holoWatchImage',
+                        'soundNovaImage',
+                        'summaryText'
+                    ];
+
+
+                    if (headerImageForPost1 && postId !== '1') {
+                        headerImageForPost1.style.display = 'none';
+                    }
+
+                    const postTitle = document.createElement('h1');
+                    postTitle.innerHTML = post.title.rendered;
+
+                    const postContent = document.createElement('div');
+                    postContent.innerHTML = post.content.rendered;
+
+                    contentDiv.appendChild(postTitle);
+                    contentDiv.appendChild(postContent);
+
+                    // Loop through the element IDs and control their visibility
+                    elementIdsToControl.forEach(elementId => {
+                        const element = document.getElementById(elementId);
+                        if (element) {
+                            element.style.display = postId === '1' ? 'block' : 'none';
+                        }
+                    });
+
+                    document.title = `My Blog | ${post.title.rendered}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching post:', error);
+                    contentDiv.innerHTML = '<p>Error loading post.</p>';
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const postId = getPostIdFromQuery();
+            if (postId) {
+                fetchAndDisplayPost(postId);
+            } else {
+                console.error('No post ID found in URL');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
