@@ -62,3 +62,20 @@ label {
 .submitForm {
     margin: 0% 15%;
 }
+
+@media only screen and (max-width: 1000px) and (min-width: 310px) {
+    .submitButton {
+        padding: 11px 25px;
+        font-size: 1rem;
+        border-radius: 100px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .submitButton {
+        padding: 11px 25px;
+        font-size: 1rem;
+        border-radius: 100px;
+        width: 20%;
+    }
+}

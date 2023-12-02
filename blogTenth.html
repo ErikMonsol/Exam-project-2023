@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/blogTenthImageHeader.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            Following X's alleged ad controversy involving antisemitic content, it is now Meta's turn to be put under
+            the spotlight for its content algorithm. According to an experiment conducted by The Wall Street Journal,
+            Instagram’s Reels video service would serve "risqué footage of children as well as overtly sexual adult
+            videos" to test accounts that exclusively followed teen and preteen influencers — namely young gymnasts and
+            cheerleaders. These sort of ads were supposed to be forbidden on Meta's platforms
+        </p>
+        <p>
+            To make matters worse, such salacious content was also mixed in with ads representing notable US brands like
+            Disney, Walmart, Pizza Hut, Bumble, Match Group and even The Wall Street Journal itself. The report added
+            that the Canadian Centre for Child Protection achieved similar results with its own tests separately.
+        </p>
+        <p>
+            While Walmart and Pizza Hut apparently declined to comment, Bumble, Match Group, Hims (retailer of
+            erectile-dysfunction drugs) and Disney have since either pulled their ads from Meta or pressed the firm to
+            address this issue. Given the earlier controversy on X, advertisers are obviously even more sensitive about
+            the type of content shown next to their ads — especially for Disney which was affected by both X and now
+            Instagram.
+        </p>
+        <p>
+            In response, Meta told its clients that it was investigating, and that it "would pay for brand-safety
+            auditing services to determine how often a company’s ads appear beside content it considers unacceptable."
+            However, the firm stopped short at providing a timetable nor detail on future prevention.
+        </p>
+        <p>
+            While one could say that such tests don't necessarily represent real user experience (as tech companies tend
+            to argue with), Instagram's tendency to aggregate child sexualization content was a known problem internally
+            — even before the launch of Reels, according to current and former Meta employees interviewed by the WSJ.
+        </p>
+        <p>
+            The same group of people suggested that an effective solution would require revamping the algorithms
+            responsible for pushing related content to users. That said, internal documents seen by the WSJ suggested
+            that Meta made it difficult for its safety team to apply such drastic changes, as traffic performance is
+            apparently more important for the social media giant.
+        </p>
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>

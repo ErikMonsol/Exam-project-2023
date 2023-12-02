@@ -5,59 +5,7 @@
     <meta charset="UTF-8">
     <title id="page-title">My Blog | An Article I Wrote</title>
     <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
-
-    <style>
-        h2#helloParagraph {
-            position: absolute;
-            color: white;
-        }
-
-        .blogImage {
-            height: 60vh;
-            width: 100%;
-        }
-
-        .headerImageTitle {
-            margin-top: 3%;
-        }
-
-        .ContainerInfo {
-            display: flex;
-            gap: 3%;
-        }
-
-        .InDepthBox {
-            margin-left: 3%;
-            width: 50%;
-        }
-
-        .textFlex {
-            display: flex;
-            gap: 4%;
-        }
-
-        .samsungS0 {
-            width: 40%;
-            border-radius: 10px;
-            height: 20vh;
-        }
-
-        .HoloWatch {
-            width: 60%;
-            border-radius: 10px;
-            height: 20vh;
-        }
-
-        .Review-Watch {
-            width: 40%;
-        }
-
-        .ConBottomInfo {
-            display: flex;
-            justify-content: center;
-            margin-top: 2%;
-        }
-    </style>
+    <link rel="stylesheet" href="CSSandJavascript/blogPageOne.css">
 </head>
 
 <body>
@@ -74,6 +22,68 @@
             </ul>
         </nav>
     </header>
+    <style>
+        .displayInfoText {
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 2550px) and (min-width: 1000px) {
+            p {
+                width: 50%;
+            }
+
+            .blogPostImage {
+                width: 60%;
+                height: auto;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) and (min-width: 310px) {
+            p {
+                width: 60%;
+
+            }
+
+            .blogPostImage {
+                width: 80%;
+                height: auto;
+            }
+
+            h1 {
+                margin: 0 auto;
+                width: 80%;
+                margin-top: 2%;
+            }
+        }
+
+
+
+
+
+        .enlarged {
+            position: fixed;
+            /* Position relative to the viewport */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center the image */
+            width: 70%;
+            /* Adjust the size as needed */
+            height: auto;
+            z-index: 1000;
+            /* Ensure it's above other elements */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            /* Optional: Adds a shadow for visibility */
+        }
+    </style>
     <div id="blogContent">
         <!-- Dynamic blog post content will appear here -->
     </div>
@@ -159,74 +169,9 @@
         </div>
     </footer>
 
+
+    <script src="CSSandJavascript/blogSidePages.js"></script>
     <script>
-        function getPostIdFromQuery() {
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            return urlParams.get('post');
-        }
-
-        function fetchAndDisplayPost(postId) {
-            fetch(`http://blogpage.local/wp-json/wp/v2/posts/${postId}`)
-                .then(response => response.json())
-                .then(post => {
-                    const contentDiv = document.getElementById('blogContent');
-                    const helloParagraph = document.getElementById('helloParagraph');
-                    const headerImageForPost1 = document.getElementById('headerImageForPost1');
-
-                    // Define an array of element IDs to control visibility
-                    const elementIdsToControl = [
-                        'samsungS0Review',
-                        'reviewText',
-                        'reviewTextSamsung',
-                        'reviewTextHoloWatch',
-                        'reviewTextSoundNova',
-                        'soundNovaTitle',
-                        'holoTitle',
-                        'samsungS0Image',
-                        'holoWatchImage',
-                        'soundNovaImage',
-                        'summaryText'
-                    ];
-
-
-                    if (headerImageForPost1 && postId !== '1') {
-                        headerImageForPost1.style.display = 'none';
-                    }
-
-                    const postTitle = document.createElement('h1');
-                    postTitle.innerHTML = post.title.rendered;
-
-                    const postContent = document.createElement('div');
-                    postContent.innerHTML = post.content.rendered;
-
-                    contentDiv.appendChild(postTitle);
-                    contentDiv.appendChild(postContent);
-
-                    // Loop through the element IDs and control their visibility
-                    elementIdsToControl.forEach(elementId => {
-                        const element = document.getElementById(elementId);
-                        if (element) {
-                            element.style.display = postId === '1' ? 'block' : 'none';
-                        }
-                    });
-
-                    document.title = `My Blog | ${post.title.rendered}`;
-                })
-                .catch(error => {
-                    console.error('Error fetching post:', error);
-                    contentDiv.innerHTML = '<p>Error loading post.</p>';
-                });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const postId = getPostIdFromQuery();
-            if (postId) {
-                fetchAndDisplayPost(postId);
-            } else {
-                console.error('No post ID found in URL');
-            }
-        });
 
     </script>
 </body>

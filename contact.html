@@ -28,20 +28,28 @@
                 <h1 class="ContactTitle">Contact us</h1>
             </div>
             <div class="formFlex">
-                <form>
-                    <label for="">Name</label>
-                    <input class="InputSizing">
-                    <label for="">Email Address</label>
-                    <input class="InputSizing">
-                    <label for="">Subject</label>
-                    <input class="InputSizing">
-                    <label for="">Message Content</label>
-                    <input class="messageContent">
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input class="InputSizing" id="name">
+                    <div id="nameError" style="color: red;"></div> <!-- Error message for name -->
+
+                    <label for="email">Email Address</label>
+                    <input class="InputSizing" id="email">
+                    <div id="emailError" style="color: red;"></div> <!-- Error message for email -->
+
+                    <label for="subject">Subject</label>
+                    <input class="InputSizing" id="subject">
+                    <div id="subjectError" style="color: red;"></div> <!-- Error message for subject -->
+
+                    <label for="message">Message Content</label>
+                    <input class="messageContent" id="message">
+                    <div id="messageError" style="color: red;"></div> <!-- Error message for message -->
+
+                    <button type="button" class="submitButton" onclick="validateForm()">Submit</button>
                 </form>
+
             </div>
-            <div class="submitForm">
-                <button class="submitButton">Submit</button>
-            </div>
+
         </div>
 
     </section>
@@ -62,6 +70,64 @@
             </div>
         </div>
     </footer>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Get input elements
+            let nameInput = document.getElementById("name");
+            let emailInput = document.getElementById("email");
+            let subjectInput = document.getElementById("subject");
+            let messageInput = document.getElementById("message");
+
+            // Validate Name
+            if (nameInput.value.length <= 5) {
+                nameInput.style.borderColor = "red";
+                nameInput.placeholder = "Name should be more than 5 characters.";
+                nameInput.value = ""; // Clear current value
+                isValid = false;
+            } else {
+                nameInput.style.borderColor = "";
+            }
+
+            // Validate Email
+            if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+                emailInput.style.borderColor = "red";
+                emailInput.placeholder = "Please enter a valid email address.";
+                emailInput.value = ""; // Clear current value
+                isValid = false;
+            } else {
+                emailInput.style.borderColor = "";
+            }
+
+            // Validate Subject
+            if (subjectInput.value.length <= 15) {
+                subjectInput.style.borderColor = "red";
+                subjectInput.placeholder = "Subject should be more than 15 characters.";
+                subjectInput.value = ""; // Clear current value
+                isValid = false;
+            } else {
+                subjectInput.style.borderColor = "";
+            }
+
+            // Validate Message
+            if (messageInput.value.length <= 25) {
+                messageInput.style.borderColor = "red";
+                messageInput.placeholder = "Message should be more than 25 characters.";
+                messageInput.value = ""; // Clear current value
+                isValid = false;
+            } else {
+                messageInput.style.borderColor = "";
+            }
+
+            // Submit the form if all validations pass
+            if (isValid) {
+                document.getElementById("contactForm").submit();
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>

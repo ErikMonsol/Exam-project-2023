@@ -1,0 +1,54 @@
+h2#helloParagraph {
+    position: absolute;
+    color: white;
+}
+
+.blogImage {
+    height: 60vh;
+    width: 100%;
+}
+
+.headerImageTitle {
+    margin-top: 3%;
+}
+
+.ContainerInfo {
+    display: flex;
+    gap: 3%;
+}
+
+.InDepthBox {
+    margin-left: 3%;
+    width: 50%;
+}
+
+.textFlex {
+    display: flex;
+    gap: 4%;
+}
+
+.samsungS0 {
+    width: 40%;
+    border-radius: 10px;
+    height: 20vh;
+}
+
+.HoloWatch {
+    width: 60%;
+    border-radius: 10px;
+    height: 20vh;
+}
+
+.Review-Watch {
+    width: 40%;
+}
+
+.ConBottomInfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+h1 {
+    text-align: center;
+}

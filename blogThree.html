@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/BlogPost3ImageHeader.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            NVIDIA is facing a lawsuit filed by French automotive company Valeo after a screensharing blunder by one of
+            its employees. According to Valeo's complaint, Mohammad Moniruzzaman, an engineer for NVIDIA who used to
+            work for its company, had mistakenly showed its source code files on his computer as he was sharing his
+            screen during a meeting with both firms in 2022. Valeo's employees quickly recognized the code and took
+            screenshots before Moniruzzaman was notified of his mistake.
+        </p>
+        <p>
+            To note, Valeo and NVIDIA are working together on an advanced parking and driving assistance technology
+            offered by a manufacturer to its customers. Valeo used to be in charge of both software and hardware sides
+            of the manufacturer's parking assistance tech. In 2021, however, the the bigger corporation won the contract
+            to develop its parking assistance software. Valeo wrote in its lawsuit that its former employee, who helped
+            it develop its parking and driving assistance systems, had realized that his exposure and access to its
+            proprietary technologies would make him "exceedingly valuable" to NVIDIA.
+        </p>
+        <p>
+            Moniruzzaman allegedly gave his personal email unauthorized access to Valeo's systems to steal "tens of
+            thousands of files" and 6GB of source code shortly after that development. He then left Valeo a few months
+            later and took the stolen information with him when he was given a senior position at NVIDIA, the complaint
+            reads. He also worked on the very same project he was involved in for Valeo, which is why he was present at
+            that video conference.
+        </p>
+        <p>
+            Valeo said its former employee admitted to stealing its software and that German police found its
+            documentation and hardware pinned on Moniruzzaman's walls when his home was raided. According to Bloomberg,
+            he was already convicted of infringement of business secrets in a German court and was ordered to pay
+            €14,400 ($15,750) in September.
+        </p>
+        <p>
+            In a letter dated June 2022, NVIDIA's lawyers told the plaintiff's counsel that the company "has no interest
+            in Valeo's code or its alleged trade secrets and has taken prompt concrete steps to protect [its] client’s
+            asserted rights." Valeo still sued the company earlier this month, however, and said that NVIDIA has "saved
+            millions, perhaps hundreds of millions, of dollars in development costs, and generated profits that it did
+            not properly earn and to which it was not entitled" by stealing its trade secrets.
+        </p>
+        <p>
+            This is but another proof that competition continues to heat up in the autonomous driving market. Back in
+            2017, Waymo accused Uber of colluding with its former employee, Anthony Levandowski, to steal over 14,000
+            confidential and proprietary design files. Levandowski was sentenced to 18 months in prison, but he was
+            pardoned six months later by then President Donald Trump.
+        </p>
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>

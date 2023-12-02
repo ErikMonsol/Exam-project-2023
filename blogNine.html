@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/BlogNinthImageHeader.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            Google Drive users have recently been reporting that files and folders have gone missing, with some saying
+            that months worth of data has disappeared from their accounts. Now, Google has acknowledged the issue,
+            saying that it appears to be caused by the Drive for Desktop app, 9to5Google has reported.
+        </p>
+        <p>
+            The issue is pretty alarming, obviously. One user on Google's support forums said that an expense
+            spreadsheet they regularly updated has lost all data from nearly the last five years, with the version
+            history showing the latest version as January 2019. "I'm really mad as this had all the important data which
+            I do not have any local copy for. I need this data retrieved at any cost." Another poster said the drive
+            reverted to May 2023, with all subsequent data disappearing, and others report similar issues.
+        </p>
+        <p>
+            In a post from yesterday, Google said that "we’re investigating reports of an issue impacting a limited
+            subset of Drive for desktop users and will follow up with more updates." It noted the problem affects Drive
+            for desktop v84.0.0.0 - 84.0.4.09. It advised users not to click "disconnect account" within Drive for
+            desktop, and to not delete or move a specific app folder called DriveFS as detailed here. It even recommends
+            making a copy of the app data folder if you have room on your hard drive.
+        </p>
+        <p>
+            Google offers several ways to recover (or at least check) deleted files. That includes checking the trash,
+            which is now automatically emptied after 30 days. It's also a good idea to check the activity panel, which
+            shows any files deleted or moved along with the relevant date. For this latest issue, however, the activity
+            panel doesn't appear to show that the files have gone missing, according to Google's support forum users.
+        </p>
+
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>

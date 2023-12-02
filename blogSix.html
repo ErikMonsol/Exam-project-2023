@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/blogSixthMeta.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            An unsealed complaint in a lawsuit filed against Meta by 33 states alleges the company is not only aware
+            that children under the age of 13 use its platforms, but has also “coveted and pursued” this demographic for
+            years on Instagram. The document, which was first spotted by The New York Times, claims that Meta has long
+            been dishonest about how it handles underage users’ accounts when they’re discovered, often failing to
+            disable them when reported and continuing to harvest their data.
+        </p>
+        <p>
+            The newly unsealed complaint, filed on Wednesday, reveals arguments that were previously redacted when
+            attorneys generals from across the US first hit Meta with the lawsuit last month in the California federal
+            court. It alleges the presence of under-13s is an “open secret” at Meta. While the policies on Facebook and
+            Instagram state a person must be at least 13 years old to sign up, children can easily lie about their age —
+            something the lawsuit says Meta is well aware of, and has done little to stop. Instead, when Meta “received
+            over 1.1 million reports of under-13 users on Instagram” from 2019-2023, it “disabled only a fraction of
+            those accounts and routinely continued to collect children’s data without parental consent,” the complaint
+            says.
+        </p>
+        <p>
+            Meta “routinely violates” the Children’s Online Privacy Protection Act of 1998 (COPPA) by targeting children
+            and collecting their information without parental consent, according to the complaint. The lawsuit also
+            argues that Meta’s platforms manipulate young users into spending unhealthy amounts of time on the apps,
+            promote body dysmorphia and expose them to potentially harmful content. When the lawsuit was first filed in
+            October, a Meta spokesperson said the company was “disappointed” over the chosen course of action, stating,
+            “We share the attorneys general’s commitment to providing teens with safe, positive experiences online.”
+        </p>
+        <p>
+            Meta earlier this month published a blog post calling for federal legislation to put more responsibility on
+            parents when it comes to kids’ app downloads. Meta's global head of safety, Antigone Davis, proposed a
+            requirement for parents to have approval power over downloads for kids under the age of 16.
+        </p>
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>

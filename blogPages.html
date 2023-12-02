@@ -3,70 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>WordPress Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Posts</title>
     <link rel="stylesheet" href="CSSandJavascript/styles.css">
     <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
-</head>
-<title>Blog Home</title>
-<style>
-    #blogPosts {
-        display: grid;
-        grid-gap: 10px;
-        margin: 0 auto;
-        width: 90%;
-        /* Adjust the width as needed */
-    }
-
-    /* Default to 1 column for very small devices */
-    #blogPosts {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* 3 columns for tablets (min-width: 768px) */
-    @media (min-width: 768px) {
-        #blogPosts {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    /* 4 columns for larger screens (min-width: 1024px) */
-    @media (min-width: 1024px) {
-        #blogPosts {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    #blogPosts div {
-        box-shadow: 0px 0px 5px #aaa;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-        background-color: skyblue;
-        margin-top: 25%;
-        margin-bottom: -20%;
-        position: relative;
-    }
-
-    button#viewMore {
-        margin-top: 8%;
-
-    }
-
-    #blogPosts img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    footer {
-        position: relative;
-        /* Keeps the footer relative */
-        margin-top: 20px;
-        /* Space between content and footer */
-        margin-top: 7%;
-    }
-</style>
-</head>
+    <link rel="stylesheet" href="CSSandJavascript/blogPagesStyles.css">
 
 <body>
     <header>
@@ -83,8 +24,9 @@
     </header>
     <div id="blogPosts">
         <!-- Blog post placeholders will be added here -->
+
     </div>
-    <button id="viewMore">View More</button>
+    <div><button id="viewMore">View More</button></div>
     <footer>
         <div class="footerflex">
             <div class="footerAdjustment">
@@ -92,6 +34,7 @@
                     <img class="socialBox" src="ImageAndSvg/facebook.svg">
                     <img class="socialBox" src="ImageAndSvg/instagram.svg">
                     <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+
                 </div>
                 <div class="newsFeed">
                     <input class="inpGmail">
@@ -102,84 +45,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        let currentPostIndex = 0;
-        const postsPerLoad = 10; // Load 5 posts each time the "View More" is clicked
-        const maxPosts = 20; // Maximum of 20 boxes
-        const container = document.getElementById('blogPosts');
-        let loadedPosts = 10; // Initially load 10 posts
-
-        const postNumberToApiIdMap = {
-            1: 1,  // Map displayed post number 1 to API ID 1
-            2: 21, // Map displayed post number 2 to API ID 21
-            3: 23, // Map displayed post number 3 to API ID 23
-            4: 25, // Map displayed post number 4 to API ID 25
-            5: 27, // Map displayed post number 5 to API ID 27
-            6: 29, // Map displayed post number 6 to API ID 29
-            7: 32, // Map displayed post number 7 to API ID 32
-            8: 34, // Map displayed post number 8 to API ID 34
-            9: 36, // Map displayed post number 9 to API ID 36
-            10: 38, // Map displayed post number 10 to API ID 38
-            11: 40, // Map displayed post number 11 to API ID 40
-            12: 42, // Map displayed post number 12 to API ID 42
-            // Add more mappings as needed
-        };
-
-        // Image placeholders for tech blog
-        const imagePlaceholders = [
-            'ImageAndSvg/1stPostImage.png',
-            'ImageAndSvg/2ndPostImage.png',
-            'ImageAndSvg/3rdPostImage.png',
-            'ImageAndSvg/4thPostImage.png',
-            'ImageAndSvg/5thPostImage.png',
-            'ImageAndSvg/6thPostImage.png',
-            'ImageAndSvg/7thPostImage.png',
-            'ImageAndSvg/8thPostImage.png',
-            'ImageAndSvg/9thPostImage.png',
-            'ImageAndSvg/.jpg',
-            'ImageAndSvg/.jpg',
-            'ImageAndSvg/.jpg',
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            loadPosts(1, 10); // Load initial 10 posts
-        });
-
-        function loadPosts(startIndex, postsCount) {
-            let endIndex = Math.min(startIndex + postsCount - 1, maxPosts);
-            for (let i = startIndex; i <= endIndex; i++) {
-                const newBox = document.createElement('div');
-                const postLink = document.createElement('a');
-                const apiId = postNumberToApiIdMap[i];
-
-                if (apiId === 21) {
-                    postLink.href = `blogTwo.html?post=${apiId}`;
-                } else {
-                    postLink.href = `blogOne.html?post=${apiId}`;
-                }
-
-                postLink.innerText = `Read Post ${i}`;
-                newBox.appendChild(postLink);
-
-                // Add an image placeholder to the post
-                const imagePlaceholder = document.createElement('img');
-                imagePlaceholder.src = imagePlaceholders[i - 1]; // Adjust index
-                newBox.appendChild(imagePlaceholder);
-
-                container.appendChild(newBox);
-            }
-            loadedPosts = endIndex; // Update the loaded post count
-
-            if (loadedPosts >= maxPosts) {
-                document.getElementById('viewMore').style.display = 'none'; // Hide if all posts are loaded
-            }
-        }
-
-        document.getElementById('viewMore').addEventListener('click', function () {
-            loadPosts(loadedPosts + 1, postsPerLoad); // Load 5 additional posts on click
-        });
-
-    </script>
+    <script src="CSSandJavascript/blogPages.js"></script>
 </body>
 
 </html>

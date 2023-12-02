@@ -1,109 +1,108 @@
-/* Disable scrolling on the entire page */
-header {
-    position: none;
-    padding-bottom: 18px;
-}
-
-body {
-    overflow: hidden;
-}
-
-
-/* Rest of your existing CSS code */
-.topBanner {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    z-index: -1;
-}
-
-.aboutBoxCont {
-    background: rgb(57, 57, 57);
-    color: white;
-    font-size: 30px;
-    height: 100%;
-    width: 70%;
-    text-align: center;
-    border-top-right-radius: 60% 20%;
-    border-top-left-radius: 60% 20%;
-}
-
-.outerBoxCont {
+.aboutContainer {
     display: flex;
     justify-content: center;
-    margin-top: 8%;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 69vh;
-}
-
-.innerBoxCont {
-    display: flex;
-    width: 100%;
-    height: 60%;
-}
-
-.rightAboutBoxCont,
-.leftAboutBoxCont {
-    background: white;
-    height: auto;
-    margin-top: 6.2%;
-    width: 20%;
-
-}
-
-.rightAboutBoxCont {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 10px;
-}
 
 
-.topicBarBlogAbout {
-    background: purple;
-    width: 100%;
-    height: 15vh;
-    display: block;
-}
-
-.blogInfoAbout {
-    border: 1px solid white;
-    width: 100%;
-    display: flex;
     gap: 10px;
+
 }
 
-.infoBoxes {
-    background: white;
-    width: 20%;
-    height: 10vw;
+.imagePotrait {
+
+    width: 100%;
 }
 
-.leftImage {
-    width: 100vh;
-    height: 48vh;
-    margin-top: -15%;
+.imagePotrait {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.aboutTitle {
-    margin-bottom: -36px;
+
+
+.textContainer {
+    display: flex;
+    gap: 10%;
 }
 
-.aboutParagraph {
-    width: 80%;
-    text-align: center;
-}
 
-.imgCircle-ParagraphCon {
-    padding: 0;
-    margin: -8% 10px;
-}
-
-.circle-Lines {
-    position: relative;
-    margin: 0;
-    padding: 0;
+.aboutSubContainer {
     height: auto;
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    width: 80%;
+}
+
+.subTextContainer {
+    width: 50%;
+}
+
+
+@media only screen and (max-width: 800px) and (min-width: 310px) {
+    .imagePotrait {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutSubContainer {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3%;
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    p {
+        font-size: 1.6vw;
+    }
+
+    .ImageAvatar {
+        width: 60%;
+        height: 90%;
+    }
+}
+
+@media only screen and (max-width: 2560px) and (min-width: 800px) {
+    .imagePotrait {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aboutSubContainer {
+        height: auto;
+        display: flex;
+        justify-content: center;
+
+        margin-top: 3%;
+        width: 80%;
+    }
+
+    .textContainer {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.7vw;
+    }
+
+    p {
+        font-size: 1.2vw;
+    }
+
+    .ImageAvatar {
+        width: 70%;
+        height: 80%;
+    }
+
+
 }

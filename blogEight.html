@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/blogEigthEvernote.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            Evernote is experimenting with severe restrictions to its free plan, which may nudge users to upgrade or
+            quit the app entirely. According to a report from TechCrunch, some Evernote users were greeted with a pop-up
+            message announcing that the free plan would be limited to a single notebook and 50 notes. The pop-up also
+            introduced a "special 40 percent off" offer, encouraging users to upgrade to a paid plan to create notes and
+            notebooks without limits.
+        </p>
+        <p>
+            But despite the in-app notification, Evernote's website has no mention of changes coming to its free plan. A
+            representative for the company explained to TechCrunch that the website had not been updated because the
+            change was not yet final. The company confirmed it has been testing the limited plan with less than 1
+            percent of its free users. Based on how that goes, Evernote will determine whether to implement the new
+            plan. If that does happen, the representative said the company would then communicate the changes to “the
+            relevant customer touch-points.”
+        </p>
+        <p>
+            The limited version of the free plan would not prevent users from managing, editing or deleting their
+            current notes. It would only take away the ability to create new notes unless users took the plunge and paid
+            for their plan.
+        </p>
+        <p>
+            For years, Evernote was the go-to app for countless power users and productivity gurus. However, the app has
+            been kind of on a downward slide for a while. In 2020, it appeared Evernote was trying to reclaim its crown
+            with the release of a major cross-platform redesign. But the updates weren't enough to revive the app, which
+            was once valued at almost a billion dollars. Last November, Evernote was purchased by a Milan-based company
+            called Bending Spoons, which went on to lay off 129 staffers. Bending Spoons later announced it would be
+            abandoning most of its US operations, shifting Evernote development to Europe.
+        </p>
+        <p>
+            If implemented, this would be a dramatic change for die-hard Evernote fans who have stuck with the free plan
+            for lightweight note-taking purposes. The change would make the free plan basically useless, and there would
+            be no compelling reason to use Evernote over something free and more powerful like Apple and Google’s own
+            note-taking apps.
+        </p>
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>

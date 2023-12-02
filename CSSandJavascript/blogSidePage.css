@@ -1,0 +1,85 @@
+  /* Add your styling here */
+  .blogPostImage {
+      cursor: pointer;
+      /* Add other styles as needed */
+  }
+
+  .enlarged-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent background */
+      display: none;
+      /* Initially hidden */
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+      /* Higher z-index to overlay other elements */
+  }
+
+  .enlarged {
+      max-width: 80%;
+      /* Adjust the maximum width as needed */
+      max-height: 80vh;
+      /* Adjust the maximum height as needed */
+      width: auto;
+      height: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .displayInfoText {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.5%;
+  }
+
+  h1 {
+      text-align: center;
+  }
+
+  @media only screen and (max-width: 2550px) and (min-width: 1000px) {
+      p {
+          width: 50%;
+      }
+
+      .blogPostImage {
+          width: 60%;
+          height: auto;
+      }
+  }
+
+  @media only screen and (max-width: 1000px) and (min-width: 310px) {
+      p {
+          width: 60%;
+      }
+
+      .blogPostImage {
+          width: 80%;
+          height: auto;
+      }
+
+      h1 {
+          margin: 0 auto;
+          width: 80%;
+          margin-top: 2%;
+      }
+  }
+
+  footer {
+      margin-bottom: -3%;
+  }
+
+  .FourthBlogBottomImage {
+      height: auto;
+      width: 35%;
+  }
+
+  .BlogFithBottomImage {
+      height: auto;
+      width: 45%;
+  }

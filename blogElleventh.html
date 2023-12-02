@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" src="ImageAndSvg/blogElleventhImageHeader.jpg" onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            The margin of success in Formula 1 often comes down to tiny measurements of time and distance. Drivers know
+            the exact lines to take at corners for optimal lap times. Sometimes, though, racers will go out of bounds as
+            they try to gain an advantage. To help officials check whether a car's wheels entirely cross the white
+            boundary line, F1 will test an AI system.
+        </p>
+        <p>
+            The Fédération Internationale de l'Automobile (FIA), the motorsport's governing body, says it will employ
+            Computer Vision tech at the season-closing Abu Dhabi Grand Prix this weekend. This approach uses shape
+            analysis to determine the number of pixels that cross the line at the edge of the track.
+        </p>
+        <p>
+            The FIA doesn't plan to fully automate reviews of track limits breaches for the time being. Rather, it wants
+            to significantly reduce the number of potential rule violations that are sent to officials for manual
+            review.
+            FDA.
+        </p>
+        <p>
+            As Reuters notes, July's Austrian Grand Prix saw four people having to review around 1,200 potential
+            violations. After some track limit violations went unpunished in October's US Grand Prix, officials
+            acknowledged they'd have to find a new approach. Enter Computer Vision.
+        </p>
+        <p>
+            This tech has been used in medicine to help review data from cancer screenings. "They don’t want to use the
+            Computer Vision to diagnose cancer, what they want to do is to use it to throw out the 80 percent of cases
+            where there clearly is no cancer in order to give the well-trained people more time to look at the 20
+            percent," Tim Malyon, the FIA's deputy race director and head of remote operations, said. "And that’s what
+            we are targeting."
+        </p>
+        <p>
+            The FIA hopes to reduce the number of possible infringements that officials manually review to around 50 per
+            race. The aim is to "remove the ones that clearly don’t need a human review," Malyon said.
+        </p>
+        <p>
+            While the FIA won't rely entirely on AI to make race calls anytime soon, Malyon expects that to happen
+            eventually. "I’ve said repeatedly that the human is winning at the moment in certain areas. That might be
+            the case now but we do feel that ultimately, real time automated policing systems are the way forward."
+        </p>
+    </div>
+
+
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
+
+    </script>
+
+</body>
+
+</html>
