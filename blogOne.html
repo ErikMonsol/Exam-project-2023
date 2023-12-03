@@ -1,40 +1,96 @@
-<!-- blogsidepage.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Page</title>
+    <title>BlogPageTwo</title>
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/blogSidePage.css">
+    <link rel="stylesheet" type="text/css" href="CSSandJavascript/headerandfooterstyle.css">
+
 </head>
 
 <body>
-    <div id="mainContent">
-        <!-- Blog content will be loaded dynamically -->
+    <header>
+        <nav>
+            <ul class="link-pages">
+                <li class="LogoText">
+                    <p><a href="index.html">Techlogue</a></p>
+                </li>
+                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
+                <li> <a href="about.html">About</a></li>
+                <li> <a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 id="blogContent"></h1>
+    <div class="displayInfoText">
+        <img class="blogPostImage" alt="image of OnePlus phone" src="ImageAndSvg/firstBlogImage.jpg"
+            onclick="enlargeImage(this)">
+        <p id="paragraphText">
+            If you’ve long dreamed of watching a very small number of vehicles roll off an assembly line, today’s your
+            chance. Tesla is holding a livestream event to highlight deliveries of its long-awaited Cybertruck. The
+            company has only managed to manufacture ten of them so far, despite a 2019 reveal, so that’s what we’ll be
+            watching.
+        </p>
+        <p>
+            You can catch the Texas-based livestream on X, of course, but the event is also available via Tesla’s
+            website. It all goes down at 3PM EST. Being as how there will only be ten trucks to show off, the livestream
+            should also go over pertinent details regarding battery range, towing capacity, up-to-date pricing and, of
+            course, general availability. Tesla plans on ramping up production in 2024 for the cute lil dystopian wonder
+            cars.
+        </p>
+        <p>
+            It’s easy to make jokes at the automaker’s expense, given the recent history of its CEO, but this is
+            something of a big deal. It’s Tesla’s first truck, despite looking nothing like a classic pickup. The
+            aesthetics are absolutely wild, with it resembling something out of a 1970s sci-fi flick instead of
+            something you’d spot at a tailgate party. As for performance, it remains to be seen if the Cybertruck can
+            compete with rival vehicles in the off-road market.
+        </p>
+        <p>
+            Tesla’s Cybertruck has been plagued with issues from inception. During its 2019 product debut, Elon Musk
+            crowed about the unbreakable glass window and invited a customer to try to break it by hurling a bowling
+            ball. Well, it shattered, leading to a muttered curse from the embattled CEO. Despite that embarrassment,
+            the company still says the vehicle boasts a “nearly impenetrable” exoskeleton that resists dents, damage and
+            long-term corrosion. We shall see. There have been multiple delays and a redesign back in 2020.
+        </p>
+        <p>
+            There’s also the matter of price. When it was first revealed, the Cybertruck was set to cost around $40,000.
+            However, the company’s been fairly silent on the subject since then and a lot has changed since 2019. You
+            can reserve a vehicle right now from Tesla by plopping down $100, but who knows when actual shipments will
+            start. Despite that, Musk recently told investors that it has accrued more than one million reservations.
+            Those folks will be waiting a while, as even generous estimates allow for Tesla to manufacture around
+            200,000 Cybertrucks each year.
+        </p>
+
     </div>
-    <script src="individual_blog_script.js">
-        // individual_blog_script.js
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get the blogId from the query parameter
-            const urlParams = new URLSearchParams(window.location.search);
-            const blogId = urlParams.get('blogId');
 
-            // Fetch the blog content based on the blogId (you can use a similar approach as in the previous examples)
-            const blog = {
-                id: 1,
-                title: 'An Article I Wrote',
-                content: 'This is the content of the article.',
-            };
 
-            // Update the main content with the selected blog
-            const mainContent = document.getElementById('mainContent');
-            mainContent.innerHTML = `
-        <h1>${blog.title}</h1>
-        <p>${blog.content}</p>
-    `;
-        });
+    <div class="enlarged-container" onclick="hideEnlarged()">
+        <img class="enlarged" src="">
+    </div>
+
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="CSSandJavascript/blogSidePages.js  ">
+
 
     </script>
+
 </body>
 
 </html>

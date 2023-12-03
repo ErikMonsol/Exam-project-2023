@@ -22,7 +22,7 @@ const postNumberToApiIdMap = {
 
 // Image placeholders for tech blog
 const imagePlaceholders = [
-    'ImageAndSvg/1stBlogHeaderImage.png',
+    'ImageAndSvg/firstBlogImage.jpg',
     'ImageAndSvg/BlogPostImage2.jpg',
     'ImageAndSvg/BlogPost3ImageHeader.jpg',
     'ImageAndSvg/FourthImageHeader.jpg',
@@ -46,26 +46,26 @@ const imagePlaceholders = [
 ];
 
 const posts = [
-    { title: "Newest gadgets on the market", url: "blogPost1.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost2.html" },
-    { title: "NVIDIA Accused of Trade Secret Theft After Screenshare Error Reveals Competitor's Code", url: "blogPost3.html" },
+    { title: "Tesla will deliver the first Cybertrucks today at 3PM ET" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "NVIDIA Accused of Trade Secret Theft After Screenshare Error Reveals Competitor's Code" },
     { title: "OnePlus 12 with Snapdragon 8 Gen 3 will debut in China on December 5", url: "blogPost4.html" },
-    { title: "Webb telescope images show an unprecedented and ‘chaotic’ view of the center of our galaxy", url: "blogPost5.html" },
-    { title: "Unsealed complaint says Meta ‘coveted’ under-13s and deceives the public about age enforcement", url: "blogPost6.html" },
-    { title: "Tesla sues Sweden for blocking license plate deliveries during labor strike", url: "blogPost1.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost2.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost3.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost4.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost5.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
-    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" }
+    { title: "Webb telescope images show an unprecedented and ‘chaotic’ view of the center of our galaxy" },
+    { title: "Unsealed complaint says Meta ‘coveted’ under-13s and deceives the public about age enforcement" },
+    { title: "Tesla sues Sweden for blocking license plate deliveries during labor strike" },
+    { title: "Evernote is reportedly testing a severely restricted plan for free users" },
+    { title: "Google is investigating a Drive issue that causes files to go missing" },
+    { title: "Instagram reportedly served up child-sexualizing reels to followers of teen influencers" },
+    { title: "Formula 1 hopes AI will help it figure out if a car breaks track limits" },
+    { title: "MIT tests new ingestible sensor that records your breathing through your intestines" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M" }
 
 ];
 
@@ -114,6 +114,15 @@ function loadPosts(startIndex, postsCount) {
                 case 1: url = 'blogOne.html?post=' + apiId; break;
                 case 21: url = 'blogTwo.html?post=' + apiId; break;
                 case 23: url = 'blogThree.html?post=' + apiId; break;
+                case 25: url = 'blogFourth.html?post=' + apiId; break;
+                case 27: url = 'blogFive.html?post=' + apiId; break;
+                case 29: url = 'blogSix.html?post=' + apiId; break;
+                case 32: url = 'blogSeven.html?post=' + apiId; break;
+                case 34: url = 'blogEight.html?post=' + apiId; break;
+                case 36: url = 'blogNine.html?post=' + apiId; break;
+                case 38: url = 'blogTenth.html?post=' + apiId; break;
+                case 40: url = 'blogElleventh.html?post=' + apiId; break;
+                case 42: url = 'blogTwelth.html?post=' + apiId; break;
                 // ... include all cases as per your requirements
                 default: url = post.url + '?post=' + apiId; break;
             }
