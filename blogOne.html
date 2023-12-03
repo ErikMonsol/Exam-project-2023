@@ -1,177 +1,38 @@
+<!-- blogsidepage.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title id="page-title">My Blog | An Article I Wrote</title>
-    <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
-    <link rel="stylesheet" href="CSSandJavascript/blogPageOne.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
 </head>
 
 <body>
-    <header>
-        <!-- Your existing header content -->
-        <nav>
-            <ul class="link-pages">
-                <li class="LogoText">
-                    <p><a href="index.html">Techlogue</a></p>
-                </li>
-                <li class="li-text"><a href="blogPages.html">Blog Posts</a></li>
-                <li> <a href="about.html">About</a></li>
-                <li> <a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <style>
-        .displayInfoText {
-
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        @media only screen and (max-width: 2550px) and (min-width: 1000px) {
-            p {
-                width: 50%;
-            }
-
-            .blogPostImage {
-                width: 60%;
-                height: auto;
-            }
-        }
-
-        @media only screen and (max-width: 1000px) and (min-width: 310px) {
-            p {
-                width: 60%;
-
-            }
-
-            .blogPostImage {
-                width: 80%;
-                height: auto;
-            }
-
-            h1 {
-                margin: 0 auto;
-                width: 80%;
-                margin-top: 2%;
-            }
-        }
-
-
-
-
-
-        .enlarged {
-            position: fixed;
-            /* Position relative to the viewport */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            /* Center the image */
-            width: 70%;
-            /* Adjust the size as needed */
-            height: auto;
-            z-index: 1000;
-            /* Ensure it's above other elements */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            /* Optional: Adds a shadow for visibility */
-        }
-    </style>
-    <div id="blogContent">
-        <!-- Dynamic blog post content will appear here -->
+    <div id="mainContent">
+        <!-- Blog content will be loaded dynamically -->
     </div>
-    <img class="blogImage" src="ImageAndSvg/1stBlogHeaderImage.png" alt="Header Image for Post 1"
-        id="headerImageForPost1">
-    <div class="ContainerInfo">
-        <div class="InDepthBox">
-            <h3 id="samsungS0Review">Review: Samsung S0</h3>
-            <div class="textFlex">
-                <p id="reviewTextSamsung">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
-                    augue
-                    eros.
-                    Nam vulputate
-                    non
-                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
-                    semper
-                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
-                    dui
-                    ut, auctor velit.
-                </p>
-                <img id="samsungS0Image" class="samsungS0" src="ImageAndSvg/SamsungS0.png">
-            </div>
-        </div>
-        <div class="Review-Watch">
-            <h3 id="holoTitle">Review: HoloWatch</h3>
-            <div class="textFlex">
-                <p id="reviewTextHoloWatch">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
-                    augue eros. Nam vulputate
-                    non
-                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
-                    semper
-                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
-                    dui
-                    ut, auctor velit.
-                </p>
-                <img id="holoWatchImage" class="HoloWatch" src="ImageAndSvg/HoloWatch.png">
-            </div>
-        </div>
-    </div>
+    <script src="individual_blog_script.js">
+        // individual_blog_script.js
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the blogId from the query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const blogId = urlParams.get('blogId');
 
-    <div class="ConBottomInfo">
-        <div class="InDepthBox">
-            <h3 id="soundNovaTitle">Review: SoundNova Earbuds </h3>
-            <div class="textFlex">
-                <p id="reviewTextSoundNova">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend
-                    augue eros. Nam vulputate
-                    non
-                    diam at molestie. Maecenas finibus, velit ut laoreet sollicitudin, ex justo hendrerit metus, vel
-                    semper
-                    lacus leo vel erat. Quisque sodales ultricies massa in mattis. Aenean eget ante vulputate, ultricies
-                    dui
-                    ut, auctor velit.
-                </p>
-                <img id="soundNovaImage" class="samsungS0" src="ImageAndSvg/SoundNova.png">
-            </div>
-            <p id="summaryText">Dive deeper into the world of technology with our extensive collection of detailed
-                reviews. From the
-                latest
-                smartphones to cutting-edge wearable tech, our expert opinions help you make informed decisions.
-                Whether
-                you're a gadget enthusiast or just looking for your next upgrade, our reviews are designed to give
-                you
-                an
-                in-depth understanding of each product's features, performance, and value</p>
-        </div>
-    </div>
+            // Fetch the blog content based on the blogId (you can use a similar approach as in the previous examples)
+            const blog = {
+                id: 1,
+                title: 'An Article I Wrote',
+                content: 'This is the content of the article.',
+            };
 
-    <footer>
-        <div class="footerflex">
-            <div class="footerAdjustment">
-                <div class="socialContainer">
-                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
-                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
-                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
-                </div>
-                <div class="newsFeed">
-                    <input class="inpGmail">
-                    <div class="buttonNewsAdjust">
-                        <button class="subscribeNewsBut">Subscribe for News!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="CSSandJavascript/blogSidePages.js"></script>
-    <script>
+            // Update the main content with the selected blog
+            const mainContent = document.getElementById('mainContent');
+            mainContent.innerHTML = `
+        <h1>${blog.title}</h1>
+        <p>${blog.content}</p>
+    `;
+        });
 
     </script>
 </body>

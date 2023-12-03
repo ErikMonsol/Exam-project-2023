@@ -1,5 +1,5 @@
 let currentPostIndex = 0;
-const postsPerLoad = 5; // Load 5 posts each time the "View More" is clicked
+const postsPerLoad = 10; // Load 5 posts each time the "View More" is clicked
 const maxPosts = 20; // Maximum of 20 boxes
 const container = document.getElementById('blogPosts');
 let loadedPosts = 10; // Initially load 10 posts
@@ -34,6 +34,14 @@ const imagePlaceholders = [
     'ImageAndSvg/blogTenthImageHeader.jpg',
     'ImageAndSvg/blogElleventhImageHeader.jpg',
     'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
+    'ImageAndSvg/TwelthImageHeaderjpg.jpg',
     // Add more image placeholders as needed
 ];
 
@@ -49,10 +57,36 @@ const posts = [
     { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost3.html" },
     { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost4.html" },
     { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost5.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
+    { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" },
     { title: "Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M", url: "blogPost6.html" }
-    // ... (other posts)
+
 ];
 
+
+const slideBoxerElement = document.getElementById('slideBoxer');
+if (slideBoxerElement) {
+    const trendTitle = document.createElement('h1'); // Create a new h1 element
+    trendTitle.className = 'trendTitle'; // Assign a class to the h1 element
+    trendTitle.textContent = 'TOP POST TODAY'; // Set the text for the h1 element
+    slideBoxerElement.appendChild(trendTitle); // Append the h1 element to the slideBoxer div
+
+    const titleSlider = document.createElement('h3'); // Create a new h3 element
+    titleSlider.className = 'titleSlider'; // Assign a class to the h3 element
+    titleSlider.textContent = 'OnePlus 12 with Snapdragon 8 Gen 3 will debut in China on December 5'; // Set the text for the h3 element
+    slideBoxerElement.appendChild(titleSlider); // Append the h3 element to the slideBoxer div
+
+    const textSlider = document.createElement('p'); // Create a new p element
+    textSlider.className = 'textSlider'; // Assign a class to the p element
+    textSlider.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis nisl id tellus finibus hendrerit. Etiam et nisi sed erat bibendum commodo.'; // Set the text for the p element
+    slideBoxerElement.appendChild(textSlider); // Append the p element to the slideBoxer div
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     loadPosts(1, 10); // Load initial 10 posts
@@ -60,47 +94,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function loadPosts(startIndex, postsCount) {
     let endIndex = Math.min(startIndex + postsCount - 1, maxPosts);
-    for (let i = startIndex; i <= endIndex; i++) {
-        const newBox = document.createElement('div');
-        const apiId = postNumberToApiIdMap[i];
 
-        newBox.onclick = function () {
-            let url;
+    // Adding text to the slideBoxer div
+
+
+    for (let i = startIndex; i <= endIndex; i++) {
+        if (i - 1 < posts.length) {
+            const newBox = document.createElement('div');
+            newBox.className = 'BlogBox';
+
+            const apiId = postNumberToApiIdMap[i];
+            let url = '';
+
+            const post = posts[i - 1];
+            const imageUrl = imagePlaceholders[i - 1];
+
+            // Determine the URL for each box
             switch (apiId) {
                 case 1: url = 'blogOne.html?post=' + apiId; break;
                 case 21: url = 'blogTwo.html?post=' + apiId; break;
                 case 23: url = 'blogThree.html?post=' + apiId; break;
-                case 25: url = 'blogFourth.html?post=' + apiId; break;
-                case 27: url = 'blogFive.html?post=' + apiId; break;
-                case 29: url = 'blogSix.html?post=' + apiId; break;
-                case 32: url = 'blogSeven.html?post=' + apiId; break;
-                case 34: url = 'blogEight.html?post=' + apiId; break;
-                case 36: url = 'blogNine.html?post=' + apiId; break;
-                case 38: url = 'blogTenth.html?post=' + apiId; break;
-                case 40: url = 'blogElleventh.html?post=' + apiId; break;
-                case 42: url = 'blogTwelth.html?post=' + apiId; break;
-                default: url = 'blogPost.html?post=' + apiId; break;
+                // ... include all cases as per your requirements
+                default: url = post.url + '?post=' + apiId; break;
             }
-            window.location.href = url;
-        };
 
-        // Set the inner content of newBox
-        newBox.innerHTML = `
-    <h3>${i <= posts.length ? posts[i - 1].title : `Read Post ${i}`}</h3>
-    <img src="${imagePlaceholders[i - 1]}" alt="Post Image">
-`;
+            // Setting the onclick function for each box
+            newBox.onclick = function () {
+                window.location.href = url;
+            };
 
-        container.appendChild(newBox);
+            // Setting the inner HTML for each box
+            newBox.innerHTML = `
+                <img src="${imageUrl}" alt="Post Image">
+                <h2>${post.title}</h2>
+                <p class="textbottomLine">Lorem ipsum dolor sit amet...</p>
+            `;
+
+            container.appendChild(newBox);
+        }
     }
     loadedPosts = endIndex;
 
+    // Hide the 'View More' button if all posts are loaded
     if (loadedPosts >= maxPosts) {
         document.getElementById('viewMore').style.display = 'none';
     }
 }
 
+// Adding an event listener for the 'View More' button
 document.getElementById('viewMore').addEventListener('click', function () {
     loadPosts(loadedPosts + 1, postsPerLoad);
 });
-
-
