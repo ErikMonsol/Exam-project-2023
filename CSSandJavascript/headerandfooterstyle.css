@@ -218,19 +218,7 @@ footer {
         width: 10%;
     }
 
-    .link-pages {
-        list-style: none;
-        padding: 15px;
-        margin: 0;
-        display: flex;
-    }
 
-    a {
-        text-decoration: none;
-        color: white;
-        font-size: 2rem;
-        padding: 10px;
-    }
 
 }
 
@@ -287,4 +275,12 @@ footer {
 
 .newsFeed {
     z-index: 10;
+}
+
+.ulText {
+    font-size: 1rem;
+}
+
+.liLogo {
+    font-size: 1.3rem;
 }

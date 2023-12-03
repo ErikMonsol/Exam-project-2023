@@ -4,14 +4,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSSandJavascript/styles.css">
-    <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
     <title>Document</title>
 </head>
 
 <body>
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
 
+
+        body {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+
+        }
+
+        .link-pages {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            z-index: 2;
+            width: 100%;
+            background: black;
+        }
+
+        .li-text {
+            margin-left: 3px;
+        }
+
+        li p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+
+        .Text-Pos-H1,
+        .Text-Pos-P,
+        button.next,
+        button.prev {
+            z-index: 2;
+            position: absolute;
+        }
+
+        .link-pages,
+        .carousel-slide>img,
+        .TextInfoCon,
+        .footerAdjustment,
+        .newsFeed {
+            width: 100%;
+        }
+
+        .link-pages,
+        .TextAdjust,
+        .socialContainer,
+        .TextInfoCon,
+        .footerflex,
+        .newsFeed,
+        .footerAdjustment {
+            display: flex;
+        }
+
+        .inpGmail,
+        .subscribeNewsBut {
+            color: white;
+            border: 3px solid rgba(53, 53, 53, 1);
+        }
+
+
+
+        footer {
+            margin-top: -4px;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .LogoText {
+            margin-left: 10px;
+        }
+
+
+
+
+
+        .TextInfoCon {
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .ContactInfoText {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .contactInfo {
+            display: flex;
+            height: 85vh;
+        }
+
+        .footerflex {
+            height: 100%;
+        }
+
+        .TextInfoCon {
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -20px;
+        }
+
+        .footerAdjustment {
+            height: 15vh;
+        }
+
+        .textInfoAdjust {
+            margin: 3px;
+            font-size: 1rem;
+        }
+
+
+
+
+        .subscribeNewsBut {
+            z-index: 10;
+            background: #353535;
+            border-radius: 30px;
+            width: 20vh;
+            cursor: pointer;
+        }
+
+        .subscribeNewsBut,
+        .inpGmail {
+            height: 5vh;
+        }
+
+
+        .inpGmail {
+            background: none;
+            margin-left: 10px;
+            transform: translateX(25px);
+            z-index: -2;
+            width: 40%;
+            padding: 13px;
+        }
+
+        @media only screen and (max-width: 3000px) and (min-width: 700px) {
+            .newsFeed {
+                justify-content: right;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            .inpGmail {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+            .socialContainer {
+                margin-left: 30px;
+                align-items: center;
+                width: 10vh;
+                gap: 21px;
+                cursor: pointer;
+            }
+
+            .socialBox {
+                border: 1px solid #323232;
+                cursor: pointer;
+                padding: 3px 3px;
+                border-radius: 10px;
+                height: 6vh;
+
+            }
+
+            .link-pages {
+                gap: 30px;
+            }
+
+        }
+
+
+
+        @media only screen and (max-width: 700px) and (min-width: 300px) {
+            .newsFeed {
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-right: 10px;
+            }
+
+            .inpGmail {
+                border-top-left-radius: 60px;
+                border-top-right-radius: 60px;
+                margin-right: 25px;
+                width: 65%;
+            }
+
+            .subscribeNewsBut {
+                height: 5vh;
+                width: 29.6vh;
+                border-top-left-radius: 1px;
+                border-top-right-radius: 1px;
+            }
+
+            .buttonNewsAdjust {
+                width: 65%;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: -3px;
+            }
+
+            .socialBox {
+                border: 1px solid #323232;
+                cursor: pointer;
+                padding: 3px 3px;
+                border-radius: 10px;
+                width: 10%;
+            }
+
+            .link-pages {
+                gap: 10px;
+            }
+
+        }
+
+        @media only screen and (max-width: 700px) and (min-width: 500px) {
+            .socialBox {
+                border: 1px solid #323232;
+                cursor: pointer;
+                border-radius: 10px;
+                width: 100%;
+                height: 50%;
+                margin-left: 10px;
+            }
+
+            .socialContainer {
+                align-items: center;
+            }
+        }
+
+
+        @media only screen and (max-width: 500px) and (min-width: 300px) {
+            .socialContainer {
+                justify-content: center;
+                align-items: center;
+                margin-left: 0;
+                flex-direction: column;
+                width: 20%;
+            }
+
+            .socialBox {
+                border: 1px solid #323232;
+                cursor: pointer;
+                padding: 3px 3px;
+                border-radius: 10px;
+                width: 60%;
+                margin-bottom: 8px;
+                transform: translateY(3px);
+            }
+
+            .footerAdjustment {
+                padding: 10px 13px;
+            }
+
+            .inpGmail {
+                width: 75%;
+                padding: 10px 31px;
+            }
+
+            .buttonNewsAdjust {
+                width: 75%;
+            }
+
+
+
+        }
+
+
+        .newsFeed {
+            z-index: 10;
+        }
+
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hamburger Menu Button */
+        .hamburger-menu {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Navigation Menu */
+        .link-pages {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .link-pages li {
+            margin: 0 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 600px) {
+            .hamburger-menu {
+                display: block;
+                font-size: 2.5rem;
+                padding: 10px;
+                color: white;
+            }
+
+            nav {
+                background: black;
+            }
+
+
+            .link-pages {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .link-pages li {
+                margin: 10px 0;
+            }
+
+            .active .link-pages {
+                display: flex;
+            }
+        }
     </style>
     <header>
         <nav>
@@ -28,71 +366,12 @@
             </ul>
         </nav>
     </header>
-    <section class="carousel">
-        <div class="carousel-controls">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-        <div class="carousel-container">
-            <div>
-                <div class="carousel-slide ">
-                    <div class="TextAdjust">
-                        <h1 class="Text-Pos-H1">Connectivity</h1>
-                        <p class="Text-Pos-P">Bridging Distances, Uniting Ideas.</p>
-                    </div>
-                    <img class="" src="ImageAndSvg/GridNetwork.jpg" alt="Image 1">
-                </div>
-                <div class="carousel-slide TextAdjust">
-                    <div class="TextAdjust">
-                        <h1 class="Text-Pos-H1">Innovation</h1>
-                        <p class="Text-Pos-P">Pioneering Progress with Every Step.</p>
-                    </div>
-                    <img class="sizeAdjusment" src="ImageAndSvg/LightBulb.jpg" alt="Image 1">
-                </div>
-                <div class="carousel-slide TextAdjust">
-                    <div class="TextAdjust">
-                        <h1 class="Text-Pos-H1">Cybersecurity</h1>
-                        <p class="Text-Pos-P">Guardians of the Digital Frontier.</p>
-                    </div>
-                    <img src="ImageAndSvg/cyber-security-3374252_1920.jpg" alt="Image 1">
-                </div>
-                <div class="carousel-slide TextAdjust">
-                    <div class="TextAdjust">
-                        <h1 class="Text-Pos-H1">Artificial Intelligence</h1>
-                        <p class="Text-Pos-P">Redefining Possibilities with AI</p>
-                    </div>
-                    <img src="ImageAndSvg/AI.jpg" alt="Image 1">
-                </div>
-                <div class="carousel-slide TextAdjust">
-                    <div class="TextAdjust">
-                        <h1 class="Text-Pos-H1">Virtual Reality</h1>
-                        <p class="Text-Pos-P">Immerse Yourself in New Dimensions</p>
-                    </div>
-                    <img src="ImageAndSvg/GridNetwork.jpg" alt="Image 1">
-                </div>
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('active');
+        });
 
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footerflex">
-            <div class="footerAdjustment">
-                <div class="socialContainer">
-                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
-                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
-                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
-                </div>
-                <div class="newsFeed">
-                    <input class="inpGmail">
-                    <div class="buttonNewsAdjust">
-                        <button class="subscribeNewsBut">Subscribe for News!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="CSSandJavascript/header.js">  </script>
-    <script src="CSSandJavascript/script.js"></script>
+    </script>
 </body>
 
 </html>
