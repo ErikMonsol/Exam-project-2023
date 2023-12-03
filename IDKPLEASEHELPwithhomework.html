@@ -4,159 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Blog Posts</title>
     <link rel="stylesheet" href="CSSandJavascript/styles.css">
     <link rel="stylesheet" href="CSSandJavascript/headerandfooterstyle.css">
-    <link rel="stylesheet" href="CSSandJavascript/.css">
+    <title>Document</title>
+</head>
 
 <body>
-
     <style>
-        body {
-            background: black;
-            color: white
-        }
 
-        .wrapper {
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(3, 1fr);
-            margin: 0 auto;
-            width: 90%;
-            gap: 3%;
-
-        }
-
-        /* Add margin to the bottom of the last BlogBox or to the .textbottomLine class if it is the last element in the BlogBox */
-        .BlogBox:last-child .textbottomLine,
-        .BlogBox:last-child p {
-            /* This targets the last paragraph in the last BlogBox */
-            margin-bottom: 40px;
-            /* Adjust the value as needed */
-        }
-
-        /* Add styles to the #viewMore button to ensure it is properly spaced from the elements above it */
-        #viewMore {
-            display: block;
-            /* Makes the button a block element, allowing margin to take effect */
-            margin: 20px auto;
-            /* Adds margin to the top and bottom, and auto on the sides centers the button */
-            padding: 10px 20px;
-            /* Adds some padding inside the button for a better appearance */
-            background-color: #353535;
-            /* Example background color, adjust as needed */
-            color: white;
-            /* Text color */
-            border: none;
-            /* Removes the default border */
-            border-radius: 5px;
-            /* Optionally rounds the corners of the button */
-            cursor: pointer;
-            /* Changes the mouse cursor to indicate the button is clickable */
-            font-size: 16px;
-            /* Adjust as needed */
-        }
-
-        /* Ensure that the .wrapper div containing the .BlogBox elements does not cut off the button */
-        .wrapper {
-            margin-bottom: 8%;
-            /* Adds space below the .wrapper, adjust as needed */
-        }
-
-
-
-
-        .BlogBox {}
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-
-        }
-
-        .section-header h2 {
-            margin: 0 10px;
-            font-size: 24px;
-
-
-        }
-
-        .line {
-            height: 2px;
-            flex-grow: 1;
-            margin: 0 5px;
-            border-bottom: 1px solid white;
-        }
-
-        .slideBoxer {
-            background: #353535;
-            width: 90%;
-            margin: 8px auto;
-            border-radius: 10px;
-            height: 30vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: lightgrey;
-        }
-
-        ul.link-pages {
-            position: relative;
-        }
-
-        .slideBoxerP {
-            width: 50%;
-            text-align: center;
-        }
-
-        .BlogBox>img {
-            width: 100%;
-            border-radius: 10px;
-            height: 30vh;
-        }
-
-        .textbottomLine {
-            border-bottom: 2px solid white;
-            padding-bottom: 10px;
-            margin-bottom: -3px;
-        }
-
-        .CalendarCon {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .readBox {
-            background: none;
-            border: 3px solid #1c1c1c;
-            color: white;
-            border-radius: 100px;
-            width: 100%;
-            padding: 10px 10px;
-        }
-
-        .fixed10thcon {
-            display: flex;
-
-            margin-top: -10%;
-            justify-content: center;
-            gap: 10px;
-        }
-
-
-
-        .buttonReadCon {}
-
-        footer {
-            background: #1c1c1c;
-        }
     </style>
     <header>
         <nav>
+            <button class="hamburger-menu">
+                ☰
+            </button>
             <ul class="link-pages">
                 <li class="LogoText">
                     <p><a href="index.html">Techlogue</a></p>
@@ -167,253 +28,71 @@
             </ul>
         </nav>
     </header>
-    <div class="section-header">
-        <div class="line"></div>
-        <h2>Articles</h2>
-        <div class="line"></div>
-    </div>
-    <div class="slideBoxer">
-        <h1>TOP POSTS</h1>
-        <h3>Artifical Intelligence beyond imaginations</h3>
-        <p class="slideBoxerP">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis nisl id tellus finibus hendrerit.
-            Etiam et nisi sed erat bibendum commodo.
-        </p>
-    </div>
-    <div>
-        <div class="wrapper">
-            <div class="BlogBox">
-                <img src="ImageAndSvg/BlogPostImage2.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                </div>
-                <div class="buttonReadCon">
-                    <button class="readBox">Read More</button>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/BlogPost3ImageHeader.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/FourthImageHeader.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/WebTelescopHeaderImage.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/blogSixthMeta.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/BlogSeventhTesla.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/blogEigthEvernote.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/BlogNinthImageHeader.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/blogTenthImageHeader.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="CalendarCon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button class="readBox">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="BlogBox">
-                <img src="ImageAndSvg/blogElleventhImageHeader.jpg">
-                <h2>Neuralink, Elon Musk’s brain implant startup, quietly raises an additional $43M</h2>
-                <p class="textbottomLine">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis
-                    nisl id
-                    tellus finibus
-                    hendrerit. </p>
-                <div>
-                    <div class="fixed10thcon">
-                        <img src="Calendar.svg">
-                        <p>03/12/2023</p>
-                    </div>
-                    <div class="buttonReadCon">
-                        <button id="viewMore" onclick="showMorePosts()">View More</button>
-
-                    </div>
-                </div>
-            </div>
-
+    <section class="carousel">
+        <div class="carousel-controls">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        <button id="viewMore">View More</button>
-        <div class="wrapper"></div>
-        <footer>
-            <div class="footerflex">
-                <div class="footerAdjustment">
-                    <div class="socialContainer">
-                        <img class="socialBox" src="ImageAndSvg/facebook.svg">
-                        <img class="socialBox" src="ImageAndSvg/instagram.svg">
-                        <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+        <div class="carousel-container">
+            <div>
+                <div class="carousel-slide ">
+                    <div class="TextAdjust">
+                        <h1 class="Text-Pos-H1">Connectivity</h1>
+                        <p class="Text-Pos-P">Bridging Distances, Uniting Ideas.</p>
                     </div>
-                    <div class="newsFeed">
-                        <input class="inpGmail">
-                        <div class="buttonNewsAdjust">
-                            <button class="subscribeNewsBut">Subscribe for News!</button>
-                        </div>
+                    <img class="" src="ImageAndSvg/GridNetwork.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide TextAdjust">
+                    <div class="TextAdjust">
+                        <h1 class="Text-Pos-H1">Innovation</h1>
+                        <p class="Text-Pos-P">Pioneering Progress with Every Step.</p>
+                    </div>
+                    <img class="sizeAdjusment" src="ImageAndSvg/LightBulb.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide TextAdjust">
+                    <div class="TextAdjust">
+                        <h1 class="Text-Pos-H1">Cybersecurity</h1>
+                        <p class="Text-Pos-P">Guardians of the Digital Frontier.</p>
+                    </div>
+                    <img src="ImageAndSvg/cyber-security-3374252_1920.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide TextAdjust">
+                    <div class="TextAdjust">
+                        <h1 class="Text-Pos-H1">Artificial Intelligence</h1>
+                        <p class="Text-Pos-P">Redefining Possibilities with AI</p>
+                    </div>
+                    <img src="ImageAndSvg/AI.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide TextAdjust">
+                    <div class="TextAdjust">
+                        <h1 class="Text-Pos-H1">Virtual Reality</h1>
+                        <p class="Text-Pos-P">Immerse Yourself in New Dimensions</p>
+                    </div>
+                    <img src="ImageAndSvg/GridNetwork.jpg" alt="Image 1">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerflex">
+            <div class="footerAdjustment">
+                <div class="socialContainer">
+                    <img class="socialBox" src="ImageAndSvg/facebook.svg">
+                    <img class="socialBox" src="ImageAndSvg/instagram.svg">
+                    <img class="socialBox" src="ImageAndSvg/pintrest.svg">
+                </div>
+                <div class="newsFeed">
+                    <input class="inpGmail">
+                    <div class="buttonNewsAdjust">
+                        <button class="subscribeNewsBut">Subscribe for News!</button>
                     </div>
                 </div>
             </div>
-        </footer>
-
-        <script>
-            // Assuming your blog posts are in a container with a class of .wrapper
-            // and each post has a class of .BlogBox
-
-            let currentPostIndex = 10; // The index of the next post to show
-            const postsPerLoad = 5; // How many posts to show when "View More" is clicked
-
-            function showMorePosts() {
-                // Find all the posts
-                const allPosts = document.querySelectorAll('.wrapper .BlogBox');
-
-                // Determine the last post to show in this batch
-                const lastPostIndex = Math.min(currentPostIndex + postsPerLoad, allPosts.length);
-
-                // Loop through the posts and display the next batch
-                for (let i = currentPostIndex; i < lastPostIndex; i++) {
-                    allPosts[i].style.display = 'block';
-                }
-
-                // Update the current post index for the next batch
-                currentPostIndex = lastPostIndex;
-
-                // Hide the "View More" button if there are no more posts to show
-                if (currentPostIndex >= allPosts.length) {
-                    document.getElementById('viewMore').style.display = 'none';
-                }
-            }
-
-            // Initially hide all posts beyond the first 10
-            document.addEventListener('DOMContentLoaded', (event) => {
-                const allPosts = document.querySelectorAll('.wrapper .BlogBox');
-                allPosts.forEach((post, index) => {
-                    if (index >= 10) {
-                        post.style.display = 'none';
-                    }
-                });
-            });
-        </script>
-
+        </div>
+    </footer>
+    <script src="CSSandJavascript/header.js">  </script>
+    <script src="CSSandJavascript/script.js"></script>
 </body>
 
 </html>
